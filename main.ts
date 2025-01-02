@@ -1,5 +1,5 @@
-import { readdir,readFile,writeFile, mkdir } from "node:fs/promises";
-import {parse} from "yaml";
+import { readdir,readFile,writeFile,mkdir } from "node:fs/promises";
+import { parse } from "yaml";
 import type { SpecFile } from "@app-types/spec-file";
 import type { PackageJson } from "@npm/types";
 import { validatePlatform } from "@validations/platform";
@@ -12,7 +12,7 @@ import { existsSync } from "node:fs";
 import { isExistingVersion } from "@validations/version";
 
 async function main() {
-    const platform = validatePlatform(getInput('platform'));
+    const platform = validatePlatform(getInput('platform',{ required: true }));
     let serviceName = getInput('service', { required: true });
     let packageAccess = getInput('access');
     if (packageAccess && packageAccess !== 'public' || packageAccess !== 'private') {

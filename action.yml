@@ -1,0 +1,31 @@
+name: 'OpenAPI Spec NPM Package Generator'
+description: 'Publish an OpenAPI spec as an NPM package'
+author: 'andrew-app'
+
+# Add your action's branding here. This will appear on the GitHub Marketplace.
+branding:
+  icon: 'heart'
+  color: 'red'
+
+# Define your inputs here.
+inputs:
+  platform:
+    description: 'Base package name'
+    required: true
+    default: 'andrew-app'
+  service:
+    description: 'Service name'
+    required: true
+    default: 'temp'
+  access:
+    description: 'Package access level (private or public)'
+    required: false
+    default: 'private'
+  spec-directory:
+    description: 'Directory containing the OpenAPI specs'
+    required: true
+    default: './input'
+
+runs:
+  using: node20
+  main: dist/main.cjs

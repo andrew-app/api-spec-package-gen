@@ -1,8 +1,8 @@
 import { build } from 'esbuild'
 
 const options = {
-  entryPoints: ['index.ts'],
-  outfile: 'build/index.cjs',
+  entryPoints: ['main.ts'],
+  outfile: 'dist/main.cjs',
   platform: 'node',
   target: 'node20',
   bundle: true,
