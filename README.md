@@ -1,15 +1,21 @@
 # api-spec-package-gen
 
+## Getting started 
+
+### Usage
+
+### Running outside github action
+
 To install dependencies:
 
 ```bash
-bun install
+npm i
 ```
+
+This publishes packages to private registry by default ensure you create an NPM access token and reference it in your `.env` file as `NPM_TOKEN`
 
 To run:
 
 ```bash
-bun run index.ts
+npm start
 ```
-
-This project was created using `bun init` in bun v1.1.10. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

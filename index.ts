@@ -14,6 +14,10 @@ import { isExistingVersion } from "@validations/version";
 async function main() {
     const platform = validatePlatform(getInput('platform'));
     let serviceName = getInput('service', { required: true });
+    let packageAccess = getInput('access');
+    if (packageAccess && packageAccess !== 'public' || packageAccess !== 'private') {
+        packageAccess = 'private';
+    }
     if (!serviceName) {
         throw new Error('Service name is required');
     }
@@ -76,7 +80,7 @@ async function main() {
             }
             await publish(specPackage as PackageJson, tarData, {
                 npmVersion: `@${platform}/${serviceName}-service-${dir}@${version}`,
-                access: 'private',
+                access: packageAccess,
                 forceAuth: {
                     token: process.env.NPM_TOKEN
                 }
