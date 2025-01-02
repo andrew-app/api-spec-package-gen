@@ -1,0 +1,1 @@
+export const AVAILABLE_PLATFORMS = ['andrew-app'];

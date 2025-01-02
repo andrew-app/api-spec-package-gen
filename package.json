@@ -1,17 +1,24 @@
 {
   "name": "api-spec-package-gen",
-  "module": "index.ts",
+  "version": "1.0.0",
+  "main": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "bun ./index.ts"
+    "build": "tsc && node esbuild.config.js",
+    "start": "npm run build && node --env-file=.env build/index.cjs"
   },
   "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
+    "@npm/types": "^1",
+    "@types/libnpmpublish": "^9.0.1",
+    "@types/pacote": "^11.1.8",
+    "esbuild": "^0.24.2",
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@actions/core": "^1.11.1",
+    "libnpmpack": "^9.0.0",
+    "libnpmpublish": "^11.0.0",
+    "pacote": "^21.0.0",
     "yaml": "^2.6.1"
   },
   "license": "MIT"
