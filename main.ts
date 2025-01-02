@@ -4,7 +4,7 @@ import type { SpecFile } from "@app-types/spec-file";
 import type { PackageJson } from "@npm/types";
 import { validatePlatform } from "@validations/platform";
 import { getInput } from "@actions/core";
-import { manifest, tarball } from "pacote";
+import { manifest } from "pacote";
 import { publish } from "libnpmpublish";
 //@ts-ignore
 import pack from "libnpmpack";
