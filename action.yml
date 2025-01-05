@@ -28,6 +28,4 @@ inputs:
 
 runs:
   using: 'node20'
-  pre: 'setup.cjs'
   main: 'dist/main.cjs'
-  post: 'cleanup.cjs'
